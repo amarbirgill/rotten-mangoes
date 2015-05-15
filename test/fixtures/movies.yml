@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  director: MyString
+  runtime_in_minutes: 1
+  description: MyString
+  text: MyString
+  poster_immage_url: MyString
+  release_date: 2015-05-15 14:05:16
+
+two:
+  title: MyString
+  director: MyString
+  runtime_in_minutes: 1
+  description: MyString
+  text: MyString
+  poster_immage_url: MyString
+  release_date: 2015-05-15 14:05:16
