@@ -31,6 +31,9 @@ gem 'rmagick'
 # carrierwave for file uploads
 gem 'carrierwave'
 
+#pagination
+gem 'kaminari'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

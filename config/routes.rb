@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   namespace :admin do 
-    resources :users, only: [:new, :create, :update]
+    resources :users, only: [:new, :create, :update, :index, :edit, :destroy]
   end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
