@@ -8,7 +8,12 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create, :update, :index, :edit, :destroy]
   end
   resources :users, only: [:new, :create]
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy] do 
+    member do 
+      post 'create_persona'
+      delete 'destroy_persona'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,4 +5,5 @@
 <% @users.each do |user| %>
 <h3><%= user.full_name %></h3> 
 <%= link_to "Edit", edit_admin_user_path(user) %> 
+<%= link_to "Impersonate User", create_persona_session_path(id: user.id), method: :post %>
 <% end %>
