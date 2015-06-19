@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
- 
+
   def new
   end
 
@@ -29,6 +29,7 @@ class SessionsController < ApplicationController
 
   def destroy_persona
     session[:user_id] = session[:admin_user_id]
+    session[:admin_user_id] = nil 
     redirect_to movies_path, notice: "Back to admin #{current_user.full_name}"
   end
   
