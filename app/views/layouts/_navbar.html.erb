@@ -1,0 +1,23 @@
+<div class='header clearfix'>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav nav-pills pull-right">
+        <% if current_user %>
+          <% if current_user.admin? %>
+            <li role="presentation"><%= link_to "Admin", admin_users_path %></li>
+          <% end %>
+          <% if original_admin_user %>
+            <li role="presentation"><%= link_to "Revert", destroy_persona_session_path("current"), method: :delete %></li>
+          <% end %>
+        <li role="presentation"><%= link_to "Log Out", session_path("current"), method: :delete%></a></li>
+        <% else %>
+        <li role="presentation"><%= link_to "Log In", new_session_path %></li>
+        <li role="presentation"><%= link_to "Sign Up", new_user_path %></li>  
+        <% end %>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+</div>

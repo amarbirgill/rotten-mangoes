@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>RottenMangoes</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value) %>
-  <% end %>
-<%= yield %>
-<%= render 'layouts/footer' %>
-</body>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <title>RottenMangoes</title>
+      <!-- Bootstrap core CSS -->
+      <link href="http://getbootstrap.com/dist/css/bootstrap.min.css  " rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render 'layouts/navbar' %>
+        <div>
+          <% flash.each do |key, value| %>
+              <%= content_tag(:div, value) %>
+          <% end %>
+        </div>
+        
+      <div class="jumbotron" style="padding-top: 90px;">
+        <h1 style="text-align: center;"><%= link_to "Rotten Mangoes", root_path %></h1>
+        <p class="lead", style="text-align: center;">Share your favorite movies here!</p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+      <%= yield %>
+
+      <footer class="footer">
+        <% if current_user %>
+          <p>Signed in as: <%= current_user.full_name %></p>
+        <% end %>
+      </footer>
+    </div>  
+  </body>
 </html>

@@ -60,7 +60,7 @@ class MoviesController < ApplicationController
       end
       relation
     else
-      relation.order(:created_at).limit(5)
+      relation.order(created_at: :desc).limit(5)
     end
   end
 
